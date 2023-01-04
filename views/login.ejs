@@ -1,0 +1,35 @@
+<%- include('layouts/header') %> 
+
+    <div class="container w-screen h-screen flex justify-center items-center">
+        <div class="p-5 rounded border-2 border-slate-50 w-2/5">
+            <h1 class="font-poppins bg-gradient-to-r from-blue-500 text-transparent to-cyan-500 bg-clip-text font-bold text-3xl mb-3 text-center">Login</h1>
+        
+        <% if (msgdanger.length !== 0) { %>
+            <div class="rounded px-3 py-2 bg-red-500 mb-2">
+                <p class="text-center text-slate-300"><%= msgdanger %></p>
+            </div>
+         
+        <% } %>
+
+        <% if (msgsuccess.length !== 0) { %>
+            <div class="rounded px-3 py-2 bg-green-500 mb-2">
+                <p class="text-center text-slate-300"><%= msgsuccess %> </p>
+            </div>
+        <% } %>
+
+            <form action="/login" method="post" class="flex flex-col">
+                <label for="username" class="font-bold text-lg text-slate-200 mb-1">Username</label>
+                <input type="text" id="username" name="username" class="text-black px-2 py-0.5 rounded" required>
+                <label for="password" class="font-bold text-lg text-slate-200 mb-1 mt-3">Password</label>
+                <input type="password" id="password" name="password" class="text-black px-2 py-0.5 rounded" required>
+                <button type="submit" class="py-0.5 px-3 mt-5 bg-blue-500 text-stone-900 rounded font-semibold w-fit mx-auto ">Send</button>
+            </form>
+
+            <p class="text-slate-200 mt-10">Do not have any account yet? Signup <a href="/signup" class="text-sky-500 font-semibold">here</a></p>
+            <p class="text-slate-200">Forget your password? click <a href="" class="text-sky-500 font-semibold">here</a></p>
+        </div>
+
+    </div>
+
+
+<%- include('layouts/footer') %>
